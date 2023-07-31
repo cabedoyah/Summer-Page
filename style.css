@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+body {
+    display:grid;
+    place-content: center;
+    height: 100vh;
+    background-color: #171717;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: left;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin: 0;
+    position: flex;
+    background-color: #171717;
+    color: #595959;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    background-color: #171717;
+    color: #595959;
+}
+
+h2::before {
+    content: attr(data-text);
+    position: absolute;
+    background: linear-gradient(90deg, rgba(0,231,254,1) 0%, rgba(0,116,255,1) 33%, rgba(53,68,255,1) 66%, rgba(134,0,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 100% 90%;
+    line-height: 1.17;
+    clip-path: ellipse(1000px 1000px at -200% 200%);
+    animation: move 1.3s alternate infinite;
+}
+
+@keyframes move {
+    0% {
+        clip-path: ellipse(500px 500px at -150% 0%);
+    }
+    100% {
+        clip-path: ellipse(500px 500px at 230% 0%);
+    }
+}
